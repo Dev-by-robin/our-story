@@ -646,6 +646,7 @@
         <div class="counter-block"><span class="counter-num" id="cnt-days">—</span><span class="counter-label">days</span></div>
         <div class="counter-block"><span class="counter-num" id="cnt-hrs">—</span><span class="counter-label">hours</span></div>
         <div class="counter-block"><span class="counter-num" id="cnt-min">—</span><span class="counter-label">minutes</span></div>
+        <div class="counter-block"><span class="counter-num" id="cnt-sec">—</span><span class="counter-label">seconds</span></div>
       </div>
       <div class="home-divider"></div>
       <div class="home-nav-btns">
@@ -866,12 +867,14 @@
       const days = Math.floor(diff / 86400000);
       const hrs  = Math.floor((diff % 86400000) / 3600000);
       const mins = Math.floor((diff % 3600000) / 60000);
+      const secs = Math.floor((diff % 60000) / 1000);
       document.getElementById('cnt-days').textContent = days;
       document.getElementById('cnt-hrs').textContent = String(hrs).padStart(2,'0');
       document.getElementById('cnt-min').textContent = String(mins).padStart(2,'0');
+      document.getElementById('cnt-sec').textContent = String(secs).padStart(2,'0');
     }
     update();
-    setInterval(update, 30000);
+    setInterval(update, 1000);
   }
 </script>
 </body>
