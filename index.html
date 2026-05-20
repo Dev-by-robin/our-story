@@ -391,6 +391,19 @@
     line-height: 1.7;
     opacity: 0.8;
   }
+  img.timeline-photo {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+}
+img.timeline-photo + img.timeline-photo {
+  margin-top: 0.5rem;
+}
   .timeline-photo {
     width: 100%;
     height: 180px;
@@ -626,7 +639,6 @@
     <ul class="nav-links">
       <li><a href="#timeline-page">Our Story</a></li>
       <li><a href="#letter-page">Love Letter</a></li>
-      <li><a href="#gallery-page">Gallery</a></li>
       <li><a href="#reasons-page">Why I Love You</a></li>
     </ul>
   </nav>
@@ -634,15 +646,16 @@
   <!-- ── HOME ── -->
   <div class="page" id="home">
     <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:2rem 2rem 4rem;background:radial-gradient(ellipse at 50% 40%, #3d0e1c 0%, var(--dark) 65%);">
-      <div class="home-date-pill">Together since 22 February 2026</div>
+      <div class="home-date-pill">Since 22 February 2026</div>
       <h1 class="home-title">
         Robin
         <span class="home-amp">&amp;</span>
         Jess
         <em>three months of us</em>
       </h1>
-      <p class="home-sub">22 May 2026 &nbsp;·&nbsp; Happy anniversary, love</p>
-      <div class="home-counter" id="counter">
+      <p class="home-sub">22 May 2026 <br> &nbsp;·&nbsp; <br> Speciaal voor jou</p>
+      <p class="home-sub">Together for</p><br>
+      <div class="home-counter" id="counter" style="margin-top: -75px;">
         <div class="counter-block"><span class="counter-num" id="cnt-days">—</span><span class="counter-label">days</span></div>
         <div class="counter-block"><span class="counter-num" id="cnt-hrs">—</span><span class="counter-label">hours</span></div>
         <div class="counter-block"><span class="counter-num" id="cnt-min">—</span><span class="counter-label">minutes</span></div>
@@ -652,7 +665,6 @@
       <div class="home-nav-btns">
         <a class="page-btn" href="#timeline-page">Our Story</a>
         <a class="page-btn" href="#letter-page">Love Letter</a>
-        <a class="page-btn" href="#gallery-page">Gallery</a>
         <a class="page-btn" href="#reasons-page">Why I Love You</a>
       </div>
     </div>
@@ -672,8 +684,8 @@
         <div class="timeline-content">
           <p class="timeline-date">8 November 2025</p>
           <h3 class="timeline-event">Where it all began</h3>
-          <p class="timeline-desc">A Verknipt b2b special rave — the music, the crowd, and somehow, each other. Of all the places to find someone, it was here.</p>
-          <div class="timeline-photo">Add a photo from that night</div>
+          <p class="timeline-desc">Verknipt b2b special — the music, the crowd, and somehow, each other. Of all the places to find someone, it was here.</p>
+          <img class="timeline-photo" src="img/IMG_7091.png" alt="">
         </div>
       </div>
 
@@ -681,8 +693,12 @@
         <div class="timeline-dot">✦</div>
         <div class="timeline-content">
           <p class="timeline-date">Coming soon</p>
-          <h3 class="timeline-event">Your next memory here</h3>
-          <p class="timeline-desc" style="font-style:italic;opacity:0.5">Share the date and I'll add it — every moment deserves to be remembered.</p>
+          <h3 class="timeline-event">Tickets to London 😛</h3>
+          <p class="timeline-desc">Our very first trip together</p>
+          <img class="timeline-photo" src="img/IMG_7625.JPG" alt="">
+          <img class="timeline-photo" src="img/IMG_7633.JPG" alt="">
+          <img class="timeline-photo" src="img/IMG_7660.JPG" alt="">
+          <img class="timeline-photo" src="img/IMG_7722.JPG" alt="">
         </div>
       </div>
 
@@ -731,42 +747,7 @@
     </div>
   </div>
 
-  <!-- ── GALLERY ── -->
-  <div class="page" id="gallery-page">
-    <div class="section-header">
-      <p class="section-eyebrow">Memories</p>
-      <h2 class="section-title">Our <em>Gallery</em></h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="gallery-grid">
-      <div class="gallery-card tall">
-        <div class="gallery-card-icon">♥&#xFE0E;</div>
-        <div class="gallery-card-label">Favourite photo</div>
-        <div class="gallery-caption">Your caption here</div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-icon">✦</div>
-        <div class="gallery-card-label">Add a photo</div>
-        <div class="gallery-caption">Verknipt night</div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-icon">✦</div>
-        <div class="gallery-card-label">Add a photo</div>
-        <div class="gallery-caption">A moment together</div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-icon">✦</div>
-        <div class="gallery-card-label">Add a photo</div>
-        <div class="gallery-caption">Your caption here</div>
-      </div>
-      <div class="gallery-card">
-        <div class="gallery-card-icon">✦</div>
-        <div class="gallery-card-label">Add a photo</div>
-        <div class="gallery-caption">Your caption here</div>
-      </div>
-    </div>
-    <p class="gallery-note">To add your photos, replace the placeholder cards with &lt;img&gt; tags in the HTML. I can help you do this step by step.</p>
-  </div>
+  
 
   <!-- ── REASONS ── -->
   <div class="page" id="reasons-page">
@@ -845,7 +826,7 @@
   // ── Page routing — now handled by native anchor links (#id) ──
 
   // Highlight active nav link on scroll
-  const sections = ['home','timeline-page','letter-page','gallery-page','reasons-page'];
+  const sections = ['home','timeline-page','letter-page','reasons-page'];
   window.addEventListener('scroll', () => {
     let current = 'home';
     sections.forEach(id => {
